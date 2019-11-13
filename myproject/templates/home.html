@@ -1,11 +1,17 @@
 {% extends "base.html" %}{% load staticfiles %}
-<html>
-<head>
-<meta charset="utf-8">
-<title>Boards</title>
-<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-</head>
-<body>
+
+
+{% block content %}
+<!--<div class="row">
+  <div class="col-md-12">
+    <div class="box box-widget">
+      <div class="box-body">
+        <ul id="treeDemo" class="ztree"></ul>
+      </div>
+    </div>
+  </div>
+</div>-->
+
 <div class="container">
 <ol class="breadcrumb my-4">
 <li class="breadcrumb-item active">Boards</li>
@@ -33,8 +39,57 @@ Django⼊⻔与实践-第9章：静态⽂件设置
 <td></td>
 </tr>
 {% endfor %}
-</tbody>
-</table>
+
+<div class="modal fade" id="modalForm">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="modalForm_title"></h4>
+      </div>
+      <div class="modal-body">
+
+        <div class="tab-content">
+          <div class="tab-pane active">
+            <form class="form-horizontal" id="modalForm_Content" method="post" action="">{% csrf_token %}
+              <input type="text" id="form_id" value="" hidden>
+
+              <div class="form-group">
+                <label class="col-md-2 control-label"> 名称 </label>
+                <div class="col-md-9">
+                  <input type="text" class="form-control" id="form_name" name="name" required
+                         placeholder="">
+                  <span class="help-block"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-2 control-label"> 父节点 </label>
+                <div class="col-md-9">
+                  <select class="form-control" id="form_parent" name="parent" onclick="showTree();"></select>
+
+                  <div id="menuContent" class="menuContent" style="display:none;">
+                    <ul id="treeDemo2" class="ztree" style="margin-top:0;"></ul>
+                  </div>
+
+                  <span class="help-block"></span>
+                </div>
+              </div>
+
+
+              <div class="modal-footer">
+                <button class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" onclick="submit_type=1">SAVE</button>
+                <button type="submit" class="btn btn-default" onclick="submit_type=2">Save and add another</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
 </div>
-</body>
-</html>
+
+{% endblock %}

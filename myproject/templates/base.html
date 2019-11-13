@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="/static/css/toastr.min.css">
   <link rel="stylesheet" href="/static/css/AdminLTE.min.css">
   <link rel="stylesheet" href="/static/css/AdminLTE_all-skins.min.css">
+  <link rel="stylesheet" href="/static/css/sidebar-menu.css">
 
   {% block css %} {% endblock %}
   <link rel="Shortcut Icon" href="/static/img/favicon.ico">
@@ -30,7 +31,7 @@
   <header class="main-header">
     <a href="/" class="logo">
       <span class="logo-mini"><img src="/static/img/logo.png"></span>
-      <span class="logo-lg"><img src="/static/img/logo.png"><b> o p s - c o f f e e </b></span>
+      <span class="logo-lg"><img src="/static/img/logo.png"><b> my-project </b></span>
     </a>
     <nav class="navbar navbar-static-top">
       <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
@@ -73,6 +74,50 @@
 
 
 
+ <!-- =============================================== -->
+
+  <aside class="main-sidebar bg-blue-gradient">
+     <section class="sidebar">
+       <ul class="sidebar-menu">
+        <li class="header">MAIN NAVIGATION</li>
+         <li class="treeview">
+          <a href="/dashboard">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-files-o"></i>
+            <span>Layout Options</span>
+            <span class="label label-primary pull-right">4</span>
+          </a>
+          <ul class="treeview-menu" style="display: none;">
+            <li><a href="#"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Boxed</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Fixed</a></li>
+            <li class=""><a href="#"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-th"></i> <span>Widgets</span>
+            <small class="label pull-right label-info">new</small>
+          </a>
+        </li>
+        <li><a href="#"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
+        <li class="header">LABELS</li>
+        <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
+        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
+        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+       </ul>
+     </section>
+  </aside>
+
   <!-- =============================================== -->
 
   <div class="content-wrapper">
@@ -92,19 +137,20 @@
     </section>
   </div>
 
-  <footer class="main-footer">
+<!--  <footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Version</b> 1.0.0
     </div>
     <strong>Copyright &copy; ops-coffee.cn</strong>
   </footer>
-</div>
+</div>-->
 
 <script src="/static/js/jquery.min.js"></script>
 <script src="/static/js/jquery.custom.js"></script>
 <script src="/static/js/adminlte.min.js"></script>
 <script src="/static/js/bootstrap.min.js"></script>
 <script src="/static/js/toastr.min.js"></script>
+  <script src="/static/js/sidebar-menu.js"></script>
 <script>
   $('.sidebar-menu li a').each(function () {
     var link = $(this).attr("href");
